@@ -1,6 +1,7 @@
 import schema from './schema.js';
 import readXlsxFile from 'read-excel-file/node.js';
 import path from 'path';
+import { FILE_DATA_NAME } from '../common/consts.js';
 
 export const Loader = {
 
@@ -13,7 +14,7 @@ export const Loader = {
     },
 
     async load() {
-        const data_path = path.join(path.resolve(), 'data.xlsx');
+        const data_path = path.join(path.resolve(), FILE_DATA_NAME);
         const rows = await readXlsxFile(data_path);
         const object_rows = rows.slice(2).reduce((prev, cur) => ([...prev, this.bind(cur)]), []);
 
