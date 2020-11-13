@@ -1,13 +1,15 @@
 
 export const schema = {
-    'release_date': 9,
-    'enterprise': 1,
-    'date': 10,
-    'key': 0,
+    'category': 0,
+    'brand': 2,
+    'model': 4,
+    'location': 6,
 };
 
 export default schema;
 
+
+// [ 'Categoria', 'Marca', null, 'Modelo', null, 'Locação', null ]
 // [
 //     'CHAVE',
 //     'Empreendimento',

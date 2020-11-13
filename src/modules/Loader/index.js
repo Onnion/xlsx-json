@@ -13,10 +13,10 @@ export const Loader = {
         return Object.entries(schema).reduce(convert, {});
     },
 
-    async load() {
+    async do() {
         const data_path = path.join(path.resolve(), FILE_DATA_NAME);
         const rows = await readXlsxFile(data_path);
-        const object_rows = rows.slice(2).reduce((prev, cur) => ([...prev, this.bind(cur)]), []);
+        const object_rows = rows.slice(3).reduce((prev, cur) => ([...prev, this.bind(cur)]), []);
 
         return object_rows;
     }
